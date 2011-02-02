@@ -85,7 +85,7 @@ def Binding.of_caller
           "  (1) statements exist after the Binding.of_caller block, or\n" <<
           "  (2) the method using Binding.of_caller is called from the\n" << 
           "      last line of a block or global scope."
-        cont.call(nil, nil, lambda { raise(Exception, error_msg) })
+        cont.call(nil, nil, lambda { raise(ScriptError, error_msg) })
       end
     end
   end

@@ -70,7 +70,7 @@ class BindingOfCallerTest < Test::Unit::TestCase
   end
 
   def test_lambda_end_body
-    error = assert_raises(Exception) {
+    error = assert_raises(ScriptError) {
       lambda {
         x = 77
         Result.assign(:x)
@@ -98,7 +98,7 @@ class BindingOfCallerTest < Test::Unit::TestCase
   end
 
   def test_block_end_body
-    error = assert_raises(Exception) {
+    error = assert_raises(ScriptError) {
       1.times do
         x = 77
         Result.assign(:x)
@@ -133,7 +133,7 @@ class BindingOfCallerTest < Test::Unit::TestCase
   end
 
   def test_trailing_error
-    error = assert_raises(Exception) {
+    error = assert_raises(ScriptError) {
       trailing_error
     }
     assert_match /Binding\.of_caller/, error.message
