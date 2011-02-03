@@ -17,10 +17,10 @@ class BindingOfCallerTest < Test::Unit::TestCase
   end
 
   class << self
-    def noop
+    def noop(*args)
     end
   end
-  def noop
+  def noop(*args)
   end
 
   def end_body
@@ -92,7 +92,7 @@ class BindingOfCallerTest < Test::Unit::TestCase
     1.times do
       x = 99
       Result.assign(:x)
-      noop
+      nil
     end
     assert_equal 99, Result.value[:x]
   end
@@ -137,5 +137,12 @@ class BindingOfCallerTest < Test::Unit::TestCase
       trailing_error
     }
     assert_match /Binding\.of_caller/, error.message
+  end
+
+  def test_inside_method_call
+    assert_raises ScriptError do
+      x = 22
+      noop(Result.assign(:x))
+    end
   end
 end
