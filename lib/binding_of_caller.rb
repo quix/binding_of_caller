@@ -2,7 +2,7 @@
 require 'continuation'
 
 module BindingOfCaller
-  VERSION = "0.1.1"
+  VERSION = "0.1.2"
 
   module_function
   
