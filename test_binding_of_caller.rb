@@ -76,7 +76,7 @@ class BindingOfCallerTest < Test::Unit::TestCase
         Result.assign(:x)
       }.call
     }
-    assert_match /Binding\.of_caller/, error.message
+    assert_match(/Binding\.of_caller/, error.message)
   end
 
   def test_lambda_mid_body
@@ -104,7 +104,7 @@ class BindingOfCallerTest < Test::Unit::TestCase
         Result.assign(:x)
       end
     }
-    assert_match /Binding\.of_caller/, error.message
+    assert_match(/Binding\.of_caller/, error.message)
   end
 
   class A
@@ -136,7 +136,7 @@ class BindingOfCallerTest < Test::Unit::TestCase
     error = assert_raises(ScriptError) {
       trailing_error
     }
-    assert_match /Binding\.of_caller/, error.message
+    assert_match(/Binding\.of_caller/, error.message)
   end
 
   def test_inside_method_call
