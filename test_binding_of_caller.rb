@@ -1,7 +1,7 @@
 require_relative 'binding_of_caller'
-require 'test/unit'
+require 'minitest/autorun'
 
-class BindingOfCallerTest < Test::Unit::TestCase
+class BindingOfCallerTest < MiniTest::Unit::TestCase
   module Result
     class << self
       def value
