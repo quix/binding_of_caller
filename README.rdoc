@@ -23,8 +23,8 @@ Obtain a caller's binding in MRI Ruby 1.9.2.
 == Description
 
 Obtain a caller's binding in MRI Ruby 1.9.2. Support for other Ruby
-platforms is planned. +binding_of_caller+ passes the caller's binding
-to the given block.
+platforms is a goal. This project is open to contributions or even a
+complete takeover by someone else.
 
 NOTE: Requires bug fix http://redmine.ruby-lang.org/issues/show/4347
 Without it, +binding_of_caller+ will succeed only once.
