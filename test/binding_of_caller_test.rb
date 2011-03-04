@@ -1,5 +1,7 @@
-require_relative 'binding_of_caller'
-require 'minitest/autorun'
+require_relative '../lib/binding_of_caller'
+
+require 'minitest/unit'
+require 'minitest/autorun' unless defined? Rake
 
 class BindingOfCallerTest < MiniTest::Unit::TestCase
   module Result
@@ -9,7 +11,7 @@ class BindingOfCallerTest < MiniTest::Unit::TestCase
       end
 
       def assign(var)
-        Binding.of_caller do |binding|
+        BindingOfCaller.binding_of_caller do |binding|
           value[var] = eval(var.to_s, binding)
         end
       end
@@ -76,7 +78,7 @@ class BindingOfCallerTest < MiniTest::Unit::TestCase
         Result.assign(:x)
       }.call
     }
-    assert_match(/Binding\.of_caller/, error.message)
+    assert_match(/binding_of_caller/, error.message)
   end
 
   def test_lambda_mid_body
@@ -104,7 +106,7 @@ class BindingOfCallerTest < MiniTest::Unit::TestCase
         Result.assign(:x)
       end
     }
-    assert_match(/Binding\.of_caller/, error.message)
+    assert_match(/binding_of_caller/, error.message)
   end
 
   class A
@@ -127,7 +129,7 @@ class BindingOfCallerTest < MiniTest::Unit::TestCase
   end
 
   def trailing_error
-    Binding.of_caller do |binding|
+    BindingOfCaller.binding_of_caller do |binding|
     end
     noop
   end
@@ -136,7 +138,7 @@ class BindingOfCallerTest < MiniTest::Unit::TestCase
     error = assert_raises(ScriptError) {
       trailing_error
     }
-    assert_match(/Binding\.of_caller/, error.message)
+    assert_match(/binding_of_caller/, error.message)
   end
 
   def test_inside_method_call
