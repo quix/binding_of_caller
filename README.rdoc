@@ -3,7 +3,7 @@
 
 == Summary
 
-Obtain a caller's binding in MRI Ruby 1.9.3.
+Obtain a caller's binding in MRI Ruby 1.9.3+.
 
 == Synopsis
 
@@ -22,9 +22,8 @@ Obtain a caller's binding in MRI Ruby 1.9.3.
 
 == Description
 
-Obtain a caller's binding in MRI Ruby 1.9.3 or higher. Support for
-other Ruby platforms is a goal. This project is open to contributions
-or even a complete takeover by someone else.
+Obtain a caller's binding in MRI Ruby 1.9.3 or higher through the use
+of a continuation.
 
 == Restrictions
 
