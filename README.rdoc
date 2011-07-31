@@ -3,7 +3,7 @@
 
 == Summary
 
-Obtain a caller's binding in MRI Ruby 1.9.2.
+Obtain a caller's binding in MRI Ruby 1.9.3.
 
 == Synopsis
 
@@ -22,12 +22,9 @@ Obtain a caller's binding in MRI Ruby 1.9.2.
 
 == Description
 
-Obtain a caller's binding in MRI Ruby 1.9.2. Support for other Ruby
-platforms is a goal. This project is open to contributions or even a
-complete takeover by someone else.
-
-NOTE: Requires bug fix http://redmine.ruby-lang.org/issues/show/4347
-Without it, +binding_of_caller+ will succeed only once.
+Obtain a caller's binding in MRI Ruby 1.9.3 or higher. Support for
+other Ruby platforms is a goal. This project is open to contributions
+or even a complete takeover by someone else.
 
 == Restrictions
 
