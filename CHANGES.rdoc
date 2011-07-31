@@ -1,6 +1,10 @@
 
 = binding_of_caller Changes
 
+== Version 0.1.3
+
+* update docs: Ruby 1.9.3 now has continuation patch.
+
 == Version 0.1.2
 
 * birthday

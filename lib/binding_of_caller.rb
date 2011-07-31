@@ -2,8 +2,6 @@
 require 'continuation'
 
 module BindingOfCaller
-  VERSION = "0.1.3"
-
   module_function
   
   def binding_of_caller
